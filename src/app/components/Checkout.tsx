@@ -1,6 +1,5 @@
 // Checkout.tsx
 import React from 'react';
-import * as $ from 'jquery';
 
 interface CheckoutProps {
 }
