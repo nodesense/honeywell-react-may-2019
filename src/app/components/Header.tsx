@@ -1,9 +1,11 @@
 // Header.tsx
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 
 interface HeaderProps {
     title: string
 };
+
 
 // ES5 styled function
 // create and return virtual dom
@@ -13,7 +15,26 @@ function Header(props: HeaderProps) {
     return (
         <div>
             <h2>{props.title}</h2>
-            <p>Menu options</p>
+            
+             <NavLink to="/" 
+                     className="button" 
+                     exact
+                      activeClassName="success"  > Home </NavLink>
+             <NavLink to="/products" 
+                      className="button"
+                      activeClassName="success" > Products </NavLink>
+             <NavLink to="/cart" className="button"
+                      activeClassName="success" > Cart </NavLink>
+             <NavLink to="/checkout" className="button"
+                      activeClassName="success"  > Checkout </NavLink>
+
+            
+            <NavLink to="/counter" className="button"
+                      activeClassName="success"  > Counter </NavLink>
+                      
+             <NavLink to="/login" className="button"
+                      activeClassName="success"  > Login </NavLink>
+
             <hr />
         </div>
     )

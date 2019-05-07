@@ -1,4 +1,9 @@
 // index.tsx
+
+// webpack, will pack the css content, and produce a csss file
+import './index.css';
+
+
 import React from 'react'; // node_modules, bundle.js
 import ReactDOM from 'react-dom'; // node_modules
 

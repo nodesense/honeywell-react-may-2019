@@ -15,7 +15,7 @@ const Footer = (props: FooterProps) => {
     return (
         <div>
             <hr />
-            <p>Copyrights @{year}, {companyName}</p>
+            <p id='copyrights'>Copyrights @{year}, {companyName}</p>
         </div>
     )
 }
