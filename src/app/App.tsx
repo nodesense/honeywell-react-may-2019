@@ -11,6 +11,8 @@ import Home from './components/Home';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import NotFound from './components/NotFound';
+import MobxCounter from './components/MobxCounter';
+import ProductList from './components/ProductList';
 
 import {BrowserRouter as Router,
         Route, 
@@ -38,13 +40,18 @@ class App extends React.Component {
                     Parent can send data to child - Properties/props
                 */}
                 <Header title="Product App"  />
-
+ 
                 {/* switch picks first match */}
 
                 <Switch>
                     <Route path="/" exact component={Home} />
                     <Route path='/cart' component={Cart} />
                     <Route path='/checkout' component={Checkout} />
+
+                    <Route path='/mobx-counter' component={MobxCounter} />
+
+                    <Route path='/products' component={ProductList} />
+
 
                     <Route path='/counter' render={ () => (
                             <Counter startValue={10}  />

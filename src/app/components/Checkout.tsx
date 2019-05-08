@@ -1,7 +1,10 @@
 // Checkout.tsx
 import React from 'react';
+import { CounterState } from '../state/CounterState';
+import {inject, observer} from 'mobx-react';
 
 interface CheckoutProps {
+    counterState?: CounterState
 }
 
 interface CheckoutState {
@@ -15,6 +18,8 @@ type StateKeys = keyof CheckoutState;
 // Ref is Reference to REAL DOM element
 // scope is limited within component
 
+@inject('counterState')
+@observer
 class Checkout extends React.Component<CheckoutProps, CheckoutState> {
     // ! nullable
    // fullNameElement!: HTMLElement; // HTMLElement
@@ -64,6 +69,7 @@ class Checkout extends React.Component<CheckoutProps, CheckoutState> {
         return (
             <div>
                 <h2>Checkout</h2>
+                <p>Counter value {this.props.counterState!.counter} </p>
                 <form>
                     <p ref={ pElem => this.notesRef = pElem } >Fill Details</p>
 
