@@ -3,14 +3,16 @@
 // webpack, will pack the css content, and produce a csss file
 import './index.css';
 import {configure} from 'mobx';
- 
+
 import {IntlProvider} from 'react-intl';
-import {addLocaleData, defineMessages} from 'react-intl';
+import {addLocaleData} from 'react-intl';
 
 import en from 'react-intl/locale-data/en';
 import fr from 'react-intl/locale-data/fr';
 import es from 'react-intl/locale-data/es';
 import de from 'react-intl/locale-data/de';
+
+import {defineMessages} from 'react-intl';
 
 
 import React from 'react'; // node_modules, bundle.js
@@ -29,9 +31,16 @@ import {Provider} from 'mobx-react';
 
 // use action to mutate the data
 configure({'enforceActions': 'always'});
-addLocaleData([...en, ...fr, ...es, ...de]);
- 
 
+addLocaleData([...en, ...fr, ...es, ...de]);
+
+const messages = defineMessages({
+    greeting: {
+        id: 'welcome',
+        description: 'Message to greet the user.',
+        defaultMessage: 'Hello, {name}!',
+    },
+});
 
 // bootstrapping
 // load React component into browser
@@ -62,7 +71,9 @@ expose all the states with in the state
 ReactDOM.render(
             <Provider {...store}
             >
-                <App /> 
+             <IntlProvider locale="en">
+                <App />
+             </IntlProvider>
             </Provider>
             , 
                 document.getElementById('root'));

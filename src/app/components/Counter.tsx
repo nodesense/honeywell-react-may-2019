@@ -175,12 +175,15 @@ class Counter extends Component<CounterProps, CounterState> {
                 <h2>Counter</h2>
                 <p>Start Value {this.props.startValue}</p>
                 <p>flag {this.state.flag.toString()}</p>
-                <p>{this.state.counter}</p>
+                <span>{this.state.counter}</span>
                 {/* event accept handler function reference as callback 
                     when event occur, handler function is INVOKED by React framework
                 */}
-                <button onClick={this.incrementWithCrash} > +1 Crash </button>
+               
                 <button onClick={ () => this.increment() } > +1 </button>
+
+                <button onClick={this.incrementWithCrash} > +1 Crash </button>
+                
                 {/* ES.NXT method */}
                 <div onClick={this.decrementBy2}>
                     <button onClick={this.decrement} > -1  </button>

@@ -1,5 +1,6 @@
 // App.tsx
 import React from 'react'; // node_modules
+import {IntlProvider, FormattedNumber, defineMessages} from 'react-intl';
 
 
 // Alias by default
@@ -13,11 +14,22 @@ import Checkout from './components/Checkout';
 import NotFound from './components/NotFound';
 import MobxCounter from './components/MobxCounter';
 import ProductList from './components/ProductList';
+import About from './components/About';
+import MobxCart from './components/MobxCart';
 
 import {BrowserRouter as Router,
         Route, 
         Switch, 
         Redirect} from 'react-router-dom';
+
+
+const messages = defineMessages({
+    greeting: {
+        id: 'welcome',
+        description: 'Message to greet the user.',
+        defaultMessage: 'Hello, {name}!',
+    },
+});
 
 // Class component
 // React create an instance for class component
@@ -30,8 +42,12 @@ class App extends React.Component {
     render() {
         return (
             <Router>
-            <div>
+            <IntlProvider locale="en-us" messages={messages}>
+                <div>
                 <p>Welcome back!! {2018 + 1}</p>
+
+                <About />
+                
                 {/* TSX Comment    */}
                 {/* composition of components 
                     App is parent component
@@ -50,6 +66,9 @@ class App extends React.Component {
 
                     <Route path='/mobx-counter' component={MobxCounter} />
 
+                    <Route path='/mobx-cart' component={MobxCart} />
+                    
+
                     <Route path='/products' component={ProductList} />
 
 
@@ -63,7 +82,9 @@ class App extends React.Component {
                 <Footer companyName='Honeywell' year={2019} />
  
             </div>
+            </IntlProvider>
             </Router>
+
         );
     }
 }

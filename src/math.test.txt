@@ -1,0 +1,13 @@
+// math.test.ts
+
+// JEST - Test Runner, find and run the test cases
+// Jasmine - Test Library, describe, test, it - write the test cases
+
+describe('math test suite', () => {
+    it('should add two numbers test case 1', () => {
+        // assertions etc
+        // expectations
+        //expect(actual).toBe(expected)
+        expect(10 + 5).toBe(15);
+    })
+})

@@ -118,9 +118,9 @@ class Cart extends React.Component<CartProps, CartState> {
             return {...item, qty}
         })
 
-        this.setState({
-            items
-        })
+        // this.setState({
+        //     items
+        // })
          
     }
 

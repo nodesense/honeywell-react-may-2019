@@ -41,6 +41,10 @@ function Header(props: HeaderProps) {
             <NavLink to="/mobx-counter" className="button"
                       activeClassName="success"  > Mobx Counter </NavLink>
 
+
+            <NavLink to="/mobx-cart" className="button"
+                      activeClassName="success"  > Mobx Cart </NavLink>
+
                       
              <NavLink to="/login" className="button"
                       activeClassName="success"  > Login </NavLink>
