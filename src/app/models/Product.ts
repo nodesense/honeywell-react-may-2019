@@ -1,8 +1,8 @@
 // Product.ts
 
 export class Product {
-    id: number;
-    name: string;
-    price: number;
-    year: number;
+    id: number = 0;
+    name: string = '';
+    price: number = 0;
+    year: number = 0;
 }
